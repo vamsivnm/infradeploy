@@ -12,11 +12,13 @@ pipeline {
         
         stage('Create_Infra') {
             steps {
+                dir('infra deploy') {
                 sh '''
                 terraform init
                 terraform plan
                 terraform apply -auto-approve
                 '''
+                }
             }
         }
         

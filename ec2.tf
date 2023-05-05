@@ -8,7 +8,7 @@ resource "aws_instance" "web" {
     host        = "${self.public_ip}"
     user        = "ec2-user"
     type        = "ssh"
-    private_key = "${file("/root/newkeypair")}"
+    private_key = "${file("/home/ec2-user/newkeypair")}"
   }
    
 
@@ -20,7 +20,7 @@ resource "aws_instance" "web" {
       host        = "${self.public_ip}"
       user        = "ec2-user"
       type        = "ssh"
-      private_key = "${file("/root/newkeypair")}"
+      private_key = "${file("/home/ec2-user/newkeypair")}"
      }
    }
 
