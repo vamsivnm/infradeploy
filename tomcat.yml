@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: root
+  tasks:
+  - name: Execute the command in remote shell
+    shell: wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.73/bin/apache-tomcat-9.0.73.tar.gz
+     
+  - name: Execute the command in remote shell
+    shell: tar -xvf apache-tomcat-9.0.73.tar.gz
+
+  - name: Execute the command in remote shell
+    shell: mv apache-tomcat-9.0.73 tomcat9
+
+  - name: Execute the command in remote shell
+    shell: |
+            cd /home/ec2-user/tomcat9/bin
+            chmod +x startup.sh
+            sh startup.sh
+
